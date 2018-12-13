@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import './'
+import { Layout } from 'antd';
+import './components/SideBar/style/index.scss'
+import {LeftSideBar} from './components/SideBar'
+
+const { Content } = Layout;
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          大树测试
-        </div>
+        <Layout>
+          <LeftSideBar/>
+          <Content>
+            Content
+          </Content>
+        </Layout>
+          
       </div>
     );
   }

@@ -1,0 +1,21 @@
+
+.ant-layout.ant-layout-has-sider{
+  height: 100%;
+}
+.sidebar-left {
+  min-height: 100vh;
+  background-color: #001529;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+.ant-layout-sider-children{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.ant-menu-item{
+  text-align: left;
+}
+.ant-menu-submenu, .ant-menu-submenu-inline{
+  text-align: left;;
+}
