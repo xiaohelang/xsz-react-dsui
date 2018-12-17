@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Layout, Button, Icon, Menu } from 'antd';
+import { Layout, Button, Icon } from 'antd';
 import './components/SideBar/style/index.scss'
 import {LeftSideBar} from './components/SideBar'
 import {NavBar} from './components/NavBar'
 
-const { Content, Header, Sider } = Layout;
-const {SubMenu, Item } = Menu;
+const { Content, Header } = Layout;
 
 class App extends Component {
   state = {
@@ -34,8 +33,6 @@ class App extends Component {
              </Content>
           </Layout>
         </Layout>
-
-          
       </div>
     );
   }

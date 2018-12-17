@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Layout, Button, Icon, Avatar, Badge, Menu  } from 'antd';
 
 const { Sider, Content } = Layout;
-const { SubMenu, Item }= Menu;
+const { Item }= Menu;
 
 class NavBar extends Component {
     constructor() {
@@ -77,7 +77,6 @@ class NavBar extends Component {
             </Badge>
             <Avatar icon="user" style={{ marginRight: 20 }}/>
           </div>
-          {/* <Button onClick={this.toggleFullScreen}>全屏</Button> */}
         </Content>
       </Layout>
     );
