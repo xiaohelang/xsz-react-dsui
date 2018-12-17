@@ -13,7 +13,7 @@ class LeftSideBar extends Component {
     const {collapsed} = this.props
     
     return (
-          <Sider width={220} theme='light' className="sidebar-left">
+          <Sider width={220} theme='light' className="sidebar-left" collapsed={collapsed}>
             <Menu mode="inline" inlineCollapsed={collapsed} inlineIndent={24}>
               <Item key="1">
                 <Icon type="appstore" />
