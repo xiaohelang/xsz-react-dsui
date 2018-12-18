@@ -12,24 +12,26 @@ class App extends Component {
     collapsed: false,
   }
 
-  toggleCollapsed = () => {
+  toggleCollapsed = (e) => {
     this.setState({
-      collapsed: !this.state.collapsed,
+      collapsed: !e,
     });
   }
   render() {
     return (
       <div className="App">
         <Layout>
-          <Header style={{padding: 0}} >
-            <NavBar collapsed={this.state.collapsed}></NavBar>
+          <Header style={{padding: 0, height: 50, lineHeight: '50px'}} >
+            <NavBar collapsed={this.state.collapsed} toggleCollapsed={this.toggleCollapsed}></NavBar>
           </Header>
           <Layout>
             <LeftSideBar collapsed={this.state.collapsed}/>
             <Content>
-              <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+              {/* <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
                 <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-              </Button>
+              </Button> */}
+                {/* <div>内容</div> */}
+                {this.props.children}
              </Content>
           </Layout>
         </Layout>

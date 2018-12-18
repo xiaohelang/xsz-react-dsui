@@ -3,7 +3,7 @@ import { Layout, Button, Icon, Avatar, Badge, Menu  } from 'antd';
 
 const { Sider, Content } = Layout;
 const { Item }= Menu;
-
+//props ==> toggleCollapsed  collapsed
 class NavBar extends Component {
     constructor() {
       super()
@@ -44,10 +44,10 @@ class NavBar extends Component {
     }
     // 收缩
     toggleCollapsed = () => {
-      console.log('-------------09090-----')
       this.setState({
         collapsed:!this.state.collapsed
       })
+      this.props.toggleCollapsed(this.state.collapsed)
     }
   render() {
     const {collapsed} = this.props
@@ -55,16 +55,17 @@ class NavBar extends Component {
       <Layout style={{height: '100%'}}>
         <Sider theme='light' width={220} collapsed={collapsed} >
           <Menu mode="inline" inlineCollapsed={collapsed} inlineIndent={24}>
-            <Item key="1">
-              <Icon type="appstore" />
-              <span>聚合通关</span>
+            <Item key="1" style={{background: '#1F2432'}}>
+              {/* <Icon type="appstore" /> */}
+              <img src="/assets/logo-closed.png" alt=""/>
+              <span style={{marginLeft: 10, color: '#fff'}} >聚合通关</span>
             </Item>
           </Menu>
         </Sider>
         <Content height={64} style={{background: '#fff', display: 'flex', justifyContent: 'space-between'}}>
           <div>
             <Button type="primary" onClick={this.toggleCollapsed} style={{ marginRight: 20, marginLeft: 20 }}>
-              <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
+              <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
             </Button>
             <Icon  onClick={this.toggleFullScreen} type="fullscreen" />
           </div>

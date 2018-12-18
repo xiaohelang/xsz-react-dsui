@@ -1,23 +1,53 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import { NavLink } from 'react-router-dom'
+import MenuConfig from './../../config/menuConfig'
 import './style/index.scss';
 
 const { Sider } = Layout;
 const { SubMenu, Item }= Menu;
 
+const icon = {
+  '/home': 'appstore',
+  '/bills': 'desktop',
+  '/trade': 'profile',
+  '/codocument': 'file-text'
+}
+
+
 class LeftSideBar extends Component {
+  renderMenu = (data) => {
+    return data.map((item) => {
+      if(item.children){
+        return <SubMenu key={item.key}  title={<span><Icon type={icon[item.key]} /><span>{item.title}</span></span>}>
+          {this.renderMenu(item.children)}
+        </SubMenu>
+      }
+      return  <Item key={item.key}><NavLink replace to={item.key}><Icon type={item.sub? icon[item.key]: ''} /><span>{item.title}</span></NavLink></Item>
+    })
+  }
+  componentWillMount() {
+    const menuTreeNode = this.renderMenu(MenuConfig)
+    this.setState({
+        menuTreeNode
+    })
+}
   render() {
     console.log('inlineCollapsed')
     console.log(this.props.collapsed)
+
+    // const ll = this.renderMenu()
 
     const {collapsed} = this.props
     
     return (
           <Sider width={220} theme='light' className="sidebar-left" collapsed={collapsed}>
             <Menu mode="inline" inlineCollapsed={collapsed} inlineIndent={24}>
-              <Item key="1">
-                <Icon type="appstore" />
-                <span>工作台</span>
+              {/* <Item key="1">
+                <NavLink to="/desk">
+                  <Icon type="appstore" />
+                  <span>工作台</span>
+                </NavLink>
               </Item>
               <SubMenu key="sub1" title={<span><Icon type="desktop" /><span>单据管理</span></span>}>
                 <Menu.Item key="5">核注清单</Menu.Item>
@@ -45,6 +75,8 @@ class LeftSideBar extends Component {
                 <Menu.Item key="12">订单管理</Menu.Item>
                 <Menu.Item key="13">操作日记</Menu.Item>
               </SubMenu>
+            */}
+            {this.state.menuTreeNode}
             </Menu>
           </Sider>
     );
