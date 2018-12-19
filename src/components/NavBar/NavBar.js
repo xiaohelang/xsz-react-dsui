@@ -53,9 +53,9 @@ class NavBar extends Component {
     const {collapsed} = this.props
     return (
       <Layout style={{height: '100%'}}>
-        <Sider theme='light' width={220} collapsed={collapsed} >
-          <Menu mode="inline" inlineCollapsed={collapsed} inlineIndent={24}>
-            <Item key="1" style={{background: '#1F2432'}}>
+        <Sider theme='light' width={220} style={{background: '#1F2432'}} collapsed={collapsed} >
+          <Menu mode="inline"  theme="dark"  inlineCollapsed={collapsed} inlineIndent={24} style={{background: '#1F2432'}}>
+            <Item key="1">
               {/* <Icon type="appstore" /> */}
               <img src="/assets/logo-closed.png" alt=""/>
               <span style={{marginLeft: 10, color: '#fff'}} >聚合通关</span>

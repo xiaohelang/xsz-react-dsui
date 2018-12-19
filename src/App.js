@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Layout, Button, Icon } from 'antd';
 import './components/SideBar/style/index.scss'
+import './style/common.scss'
 import {LeftSideBar} from './components/SideBar'
 import {NavBar} from './components/NavBar'
 

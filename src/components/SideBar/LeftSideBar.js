@@ -33,16 +33,10 @@ class LeftSideBar extends Component {
     })
 }
   render() {
-    console.log('inlineCollapsed')
-    console.log(this.props.collapsed)
-
-    // const ll = this.renderMenu()
-
-    const {collapsed} = this.props
-    
+    const {collapsed} = this.props 
     return (
-          <Sider width={220} theme='light' className="sidebar-left" collapsed={collapsed}>
-            <Menu mode="inline" inlineCollapsed={collapsed} inlineIndent={24}>
+          <Sider width={220} theme='dark' className="sidebar-left" collapsed={collapsed}>
+            <Menu mode="inline" theme="dark" inlineCollapsed={collapsed} inlineIndent={24}>
               {/* <Item key="1">
                 <NavLink to="/desk">
                   <Icon type="appstore" />
