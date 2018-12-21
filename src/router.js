@@ -3,6 +3,7 @@ import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import App from './App'
 import Desk from './pages/workDesk/workdesk'
 import Plan from './pages/bills/plan'
+import Check from './pages/bills/check'
 import NoMatch from './pages/nomatch'
 
 export default class HRouter extends React.Component{
@@ -13,6 +14,7 @@ export default class HRouter extends React.Component{
           <Switch>
             <Route path="/home" component={Desk}></Route>
             <Route path="/bills/plan" component={Plan} />
+            <Route path="/bills/check" component={Check} />
             <Route component={NoMatch} /> 
           </Switch>
         </App>
