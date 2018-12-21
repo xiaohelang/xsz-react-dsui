@@ -51,6 +51,36 @@ class Check extends Component {
         address: '大地',
         mode: '来料加工',
         remark: '海关终审通过'
+      },
+      {   
+        key: 1,
+        deskId: 'D20181211000070',
+        inOutType: '进口',
+        status: '4',
+        yuOrderId: 'NO20181211001',
+        orderId: 'NO20181211001',
+        orderType: '普通清单',
+        bookNo: 'E01045549295',
+        companyNo: 'E01045549295',
+        orderDate: '2018-12-11',
+        address: '大地',
+        mode: '来料加工',
+        remark: '海关终审通过'
+      },
+      {   
+        key: 1,
+        deskId: 'D20181211000070',
+        inOutType: '进口',
+        status: '5',
+        yuOrderId: 'NO20181211001',
+        orderId: 'NO20181211001',
+        orderType: '普通清单',
+        bookNo: 'E01045549295',
+        companyNo: 'E01045549295',
+        orderDate: '2018-12-11',
+        address: '大地',
+        mode: '来料加工来料',
+        remark: '海关终审通过'
       }
     ]
     const columns = [
@@ -58,7 +88,7 @@ class Check extends Component {
         title: '平台单证号',
         key: 'deskId',
         dataIndex: 'deskId',
-        width: 150
+        width: 140
       },
       {
         title: '进出口类型',
@@ -70,7 +100,7 @@ class Check extends Component {
         title: '审批状态',
         key: 'status',
         dataIndex: 'status',
-        width: 90,
+        width: 100,
         render(abc) {
           let config = {
               '1': <Badge status="success" text="通过" />,
@@ -98,43 +128,42 @@ class Check extends Component {
         title: '清单类型',
         key: 'orderType',
         dataIndex: 'orderType',
-        width: 80
+        width: 100
       },
       {
         title: '手(账)册编码',
         key: 'bookNo',
         dataIndex: 'bookNo',
-        width: 120
+        width: 140
       },
       {
         title: '企业内部编号',
         key: 'companyNo',
         dataIndex: 'companyNo',
-        width: 120
+        width: 140
       },
       {
         title: '清单申报日期',
         key: 'orderDate',
         dataIndex: 'orderDate',
-        width: 110
+        width: 120
       },
       {
         title: '申报地海关',
         key: 'address',
         dataIndex: 'address',
-        width: 110
+        width: 120
       },
       {
         title: '监管方式',
         key: 'mode',
         dataIndex: 'mode',
-        width: 80
+        width: 120
       },
       {
         title: '审批备注',
         key: 'remark',
-        dataIndex: 'remark',
-        width: 110
+        dataIndex: 'remark'
       }
     ]
     this.setState({
@@ -143,6 +172,15 @@ class Check extends Component {
   })
   }
   render(){
+    const rowSelection = {
+      onChange: (selectedRowKeys, selectedRows) => {
+        console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+      },
+      getCheckboxProps: record => ({
+        disabled: record.name === 'Disabled User', // Column configuration not to be checked
+        name: record.name,
+      }),
+    }
     const menuDate = (
       <div style={{ width: 150, maxHeight: 200, overflow: 'auto', border: '1px solid #ccc', background: '#fff' }}>
           <Menu>
@@ -206,7 +244,8 @@ class Check extends Component {
           columns={columns}
           dataSource={this.state.dataSource}
           pagination={false}
-          scroll={{ y: 440 }}
+          rowSelection={rowSelection}
+          scroll={{ y: 440, x: 1600 }}
         />
       </Card>
     </div>

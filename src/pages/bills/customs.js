@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Table, Modal, Form, Button, Icon, Menu, Input, Badge, Select, Tree, Dropdown,  } from 'antd';
 import { Resizable } from 'react-resizable';
 import Sortable from 'sortablejs'
-import './index.less'
+import './index.scss'
 import Axios from './../../axios/axios'
 
 const Column = Table.Column
