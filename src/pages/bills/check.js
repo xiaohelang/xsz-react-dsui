@@ -23,7 +23,7 @@ class Check extends Component {
           remark: '海关终审通过'
       },
       {   
-        key: 1,
+        key: 2,
         deskId: 'D20181211000070',
         inOutType: '进口',
         status: '2',
@@ -38,7 +38,7 @@ class Check extends Component {
         remark: '海关终审通过'
       },
       {   
-        key: 1,
+        key: 3,
         deskId: 'D20181211000070',
         inOutType: '进口',
         status: '3',
@@ -53,7 +53,7 @@ class Check extends Component {
         remark: '海关终审通过'
       },
       {   
-        key: 1,
+        key: 4,
         deskId: 'D20181211000070',
         inOutType: '进口',
         status: '4',
@@ -68,7 +68,7 @@ class Check extends Component {
         remark: '海关终审通过'
       },
       {   
-        key: 1,
+        key: 5,
         deskId: 'D20181211000070',
         inOutType: '进口',
         status: '5',
