@@ -11,7 +11,8 @@ const icon = {
   '/home': 'appstore',
   '/bills': 'desktop',
   '/trade': 'profile',
-  '/codocument': 'file-text'
+  '/codocument': 'file-text',
+  '/form': 'align-left'
 }
 
 

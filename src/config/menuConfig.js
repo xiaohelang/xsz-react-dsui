@@ -68,6 +68,21 @@ const menuList = [
               key: '/codocument/listall',
           }
       ]
-  }
+  },
+  {
+      title: '表单',
+      key: '/form',
+      sub: true,
+      children: [
+          {
+              title: '基础表单',
+              key: '/form/baseform',
+          },
+          {
+              title: '高级表单',
+              key: '/form/hightform',
+          }
+      ]
+  },
 ];
 export default menuList;
