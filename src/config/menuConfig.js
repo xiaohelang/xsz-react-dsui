@@ -79,10 +79,25 @@ const menuList = [
               key: '/form/baseform',
           },
           {
+            title: '登录',
+            key: '/form/login',
+          },
+          {
               title: '高级表单',
-              key: '/form/hightform',
+              key: '/form/register',
           }
       ]
   },
+  {
+    title: '筛选下拉框',
+    key: '/select',
+    sub: true,
+    children: [
+        {
+            title: '基础select',
+            key: '/select/baseselect',
+        }
+    ]
+},
 ];
 export default menuList;

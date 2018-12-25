@@ -12,7 +12,8 @@ const icon = {
   '/bills': 'desktop',
   '/trade': 'profile',
   '/codocument': 'file-text',
-  '/form': 'align-left'
+  '/form': 'align-left',
+  '/select': 'align-left'
 }
 
 
