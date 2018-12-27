@@ -5,6 +5,7 @@ const {Group} = Checkbox;
 class BaseRadio extends Component{
   state = {
     plainOptions : ['第一排', '前部', '中部'],
+    defaultCheckedList : ['第一排', '中部'],
     plainOptions2: ['后部', '末部'],
     plainOptions3: ['安全出口', '靠窗', '靠走廊'],
     plainOptions4: ['中间'],
@@ -12,7 +13,7 @@ class BaseRadio extends Component{
     span: 8
   }
   render() {
-    const {plainOptions, plainOptions2, plainOptions3, plainOptions4, plainOptions5, span} = this.state
+    const {plainOptions, defaultCheckedList, plainOptions2, plainOptions3, plainOptions4, plainOptions5, span} = this.state
     return (
       <div>
         <Card title="基础radio">
@@ -20,7 +21,7 @@ class BaseRadio extends Component{
             <Col span={span}>
               <p>舱位喜好</p>
               <Col>
-                <Group options={plainOptions}/>
+                <Group options={plainOptions} value={defaultCheckedList}/>
               </Col>
             </Col>
             <Col span={12}></Col>
