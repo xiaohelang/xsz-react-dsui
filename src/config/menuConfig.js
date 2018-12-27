@@ -101,6 +101,10 @@ const menuList = [
           title: '基础input',
           key: '/ui/baseinput',
         },
+        {
+          title: '基础radio',
+          key: '/ui/baseradio',
+        },
     ]
 },
 ];
