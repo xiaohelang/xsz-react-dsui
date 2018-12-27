@@ -9,6 +9,7 @@ import Baseform from './pages/form/baseform'
 import Login from './pages/form/login'
 import Register from './pages/form/register'
 import BaseSelect from './pages/select/baseSelect'
+import BaseInput from './pages/select/baseInput'
 import NoMatch from './pages/nomatch'
 
 export default class HRouter extends React.Component{
@@ -24,7 +25,8 @@ export default class HRouter extends React.Component{
             <Route path="/form/baseform" component={Baseform} />
             <Route path="/form/login" component={Login} />
             <Route path="/form/register" component={Register} />
-            <Route path="/select/baseselect" component={BaseSelect} />
+            <Route path="/ui/baseselect" component={BaseSelect} />
+            <Route path="/ui/baseinput" component={BaseInput} />
             <Route component={NoMatch} /> 
           </Switch>
         </App>

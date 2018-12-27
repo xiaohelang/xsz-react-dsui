@@ -89,14 +89,18 @@ const menuList = [
       ]
   },
   {
-    title: '筛选下拉框',
-    key: '/select',
+    title: '基础组件',
+    key: '/ui',
     sub: true,
     children: [
         {
             title: '基础select',
-            key: '/select/baseselect',
-        }
+            key: '/ui/baseselect',
+        },
+        {
+          title: '基础input',
+          key: '/ui/baseinput',
+        },
     ]
 },
 ];

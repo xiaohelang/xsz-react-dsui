@@ -13,7 +13,7 @@ const icon = {
   '/trade': 'profile',
   '/codocument': 'file-text',
   '/form': 'align-left',
-  '/select': 'align-left'
+  '/ui': 'align-left'
 }
 
 
